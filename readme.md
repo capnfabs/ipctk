@@ -27,6 +27,12 @@ Source code is available on [github](https://github.com/capnfabs/ipctk), and bin
 
 That's it! Now, you can add the Exe as a reference to your existing project and use the classes within. Every time your existing project attempts to communicate with your new class, IPCTK will take care of forwarding class instantiation, method calls, and disposal to a child process. Don't forget to `Dispose()` your class instance when you're done to free up any resources and terminate the external process.
 
+##A Couple of Gotchas##
+IPCTK uses .net `BinaryFormatter` serialization to send data to external processes. As such:
+
+- All parameters to and return values from class methods need to be of types marked `[Serializable]`, and
+- You should make sure that you setup the in-process/out-of-process boundary so that as little data is transferred as possible.
+
 ##Questions, comments, bugs?##
 
 Get in touch with me at [capnfabs.net](http://www.capnfabs.net/contact/).
