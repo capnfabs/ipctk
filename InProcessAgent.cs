@@ -101,6 +101,12 @@ namespace IPCTK
             messageReceiver = new MessageReceiver(pipeIn);
         }
 
+        /// <summary>
+        /// Run a method call for the object that the InProcessAgent is associated with.
+        /// </summary>
+        /// <param name="method">The method to call</param>
+        /// <param name="args">The arguments to the method.</param>
+        /// <returns>The return value of the method.</returns>
         public Object Call(MethodBase method, Object[] args)
         {
             messageSender.SendMessage(new MethodCallMessage(method, args));
