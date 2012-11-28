@@ -12,7 +12,7 @@ A PostSharp-driven toolkit for running code out-of-process.
 I was trying to use a class from an old COM DLL in a multhreaded application, only to find that didn't support multithreading. The problem can be avoided by wrapping the COM class in an external process. Rather than clutter existing classes with interprocess communication (IPC) code, I wrote an Aspect-driven toolkit so that implementation is almost as simple as adding `[RunOutOfProcess]` to the top of the class definition.
 
 ##Obtaining a Copy##
-Source code is available on [github](https://github.com/capnfabs/ipctk), and binaries are available with NuGet. Please note: IPCTK requires [PostSharp Starter Edition](http://www.sharpcrafters.com/postsharp/download), available free-of-charge.
+Source code is available on [github](https://github.com/capnfabs/ipctk), and binaries are available with [NuGet](http://nuget.org/packages/IPCTK). Please note: IPCTK requires [PostSharp Starter Edition](http://www.sharpcrafters.com/postsharp/download), available free-of-charge.
 
 ##How do I set up a class to run out-of-process?##
 
