@@ -36,3 +36,5 @@ IPCTK uses .net `BinaryFormatter` serialization to send data to external process
 ##Questions, comments, bugs?##
 
 Get in touch with me at [capnfabs.net](http://www.capnfabs.net/contact/).
+
+This software is licensed under the [Apache License, v2.0](http://www.apache.org/licenses/LICENSE-2.0).
