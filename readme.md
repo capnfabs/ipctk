@@ -1,20 +1,21 @@
-#IPCTK#
+# IPCTK
 
 A PostSharp-driven toolkit for running code out-of-process.
 
-##Features##
+## Features
 
 - Easy to set up and use
 - Effectively isolates code sections from the rest of the process
 
-##Why?##
+## Why?
 
 I was trying to use a class from an old COM DLL in a multhreaded application, only to find that didn't support multithreading. The problem can be avoided by wrapping the COM class in an external process. Rather than clutter existing classes with interprocess communication (IPC) code, I wrote an Aspect-driven toolkit so that implementation is almost as simple as adding `[RunOutOfProcess]` to the top of the class definition.
 
-##Obtaining a Copy##
+## Obtaining a Copy
+
 Source code is available on [github](https://github.com/capnfabs/ipctk), and binaries are available with [NuGet](http://nuget.org/packages/IPCTK). Please note: IPCTK requires [PostSharp Starter Edition](http://www.sharpcrafters.com/postsharp/download), available free-of-charge.
 
-##How do I set up a class to run out-of-process?##
+## How do I set up a class to run out-of-process?
 
 1. Add a new Exe project to your solution.
 3. Add classes to the Exe.
@@ -27,13 +28,13 @@ Source code is available on [github](https://github.com/capnfabs/ipctk), and bin
 
 That's it! Now, you can add the Exe as a reference to your existing project and use the classes within. Every time your existing project attempts to communicate with your new class, IPCTK will take care of forwarding class instantiation, method calls, and disposal to a child process. Don't forget to `Dispose()` your class instance when you're done to free up any resources and terminate the external process.
 
-##A Couple of Gotchas##
+## A Couple of Gotchas
 IPCTK uses .net `BinaryFormatter` serialization to send data to external processes. As such:
 
 - All parameters to and return values from class methods need to be of types marked `[Serializable]`, and
 - You should make sure that you setup the in-process/out-of-process boundary so that as little data is transferred as possible.
 
-##Questions, comments, bugs?##
+## Questions, comments, bugs?
 
 Get in touch with me at [capnfabs.net](http://www.capnfabs.net/contact/).
 
